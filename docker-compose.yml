@@ -3,6 +3,8 @@ services:
     build: ./apps/api
     container_name: panel-api
     restart: unless-stopped
+    environment:
+      DATABASE_URL: "postgresql://panel:panelpass@postgres:5432/panel"
     ports:
       - "3001:3001"
   postgres:
